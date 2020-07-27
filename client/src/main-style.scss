@@ -1,0 +1,105 @@
+// This is where we put global styles and change variable values
+
+// Import Fonts (Lato and Nunito)
+@import url('https://fonts.googleapis.com/css?family=Lato|Nunito&display=swap');
+
+$pomade: #AF6480;
+$cornflower-blue: #C3CEE5;
+$pomade-light: rgb(197, 127, 153);
+
+
+$primary: $pomade;
+$link: $pomade;
+
+html {
+    background: linear-gradient(to right bottom, $pomade, $cornflower-blue);
+}
+
+html, body {
+    height: 100%;
+}
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.white-box {
+    padding: 35px;
+    background: white;
+    border-radius: 5px;
+
+    width: 330px;
+    max-width: 330px;
+}
+
+.title {
+    font-family: 'Lato';
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.cool-text {
+    font-family: 'Lato';
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.menu {
+    display: flex;
+    padding-top: 23px;
+    padding-left: 40px;
+    padding-right: 40px;
+    box-sizing: border-box;
+
+    .menu-left {
+        display: flex;
+        flex-grow: 1;
+        .menu-item {
+            margin-right: 20px;
+        }
+    }
+
+    .menu-right {
+        display: flex;
+    }
+
+    .menu-item {
+        display: flex;
+        font-family: 'Lato';
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .cool-link::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: $pomade;
+        transition: width .3s;
+    }
+
+    .cool-link:hover::after {
+        width: 100%;
+        transition: 0.3s;
+    }
+
+    .cool-link-active::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: $pomade; 
+    }
+}
+
+a:hover {
+    color: $pomade;
+}

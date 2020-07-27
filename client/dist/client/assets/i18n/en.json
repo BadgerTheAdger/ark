@@ -1,0 +1,19 @@
+{
+    "HOME": {
+        "HOME": "Home",
+        "ABOUT": "About",
+        "PROFILE": "Profile",
+        "COMPANIES": "Companies",
+        "COMPANY": "Company",
+        "TOWORK": "To work"
+    },
+    "LANGUAGE": {
+        "PREFERENCES": "Preferences",
+        "SELECT": "Select",
+        "LANGUAGE": "Language",
+        "BACK": "Back to profile",
+        "USA": "U.S",
+        "UKRAINIAN": "Ukrainian",
+        "RUSSIAN": "Russian"
+    }
+}

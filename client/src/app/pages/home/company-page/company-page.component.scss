@@ -1,0 +1,68 @@
+@import "../../../../main-style.scss";
+
+.home-page-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+  max-height: 680px;
+  position: relative;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+  height: 680px;
+  background: white;
+  border-radius: 5px;
+}
+
+.company-wrapper {
+  display: flex;
+}
+
+.company-info {
+  border: 2px solid rgb(245, 244, 244);
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  padding: 20px 20px;
+}
+
+.company-control-panel {
+  border: 2px solid rgb(245, 244, 244);
+  border-radius: 5px;
+  padding: 20px 40px;
+  margin-right: 40px;
+}
+
+.control-panel-button {
+  display: flex;
+  border-radius: 5px;
+  box-shadow: 0 0 0 3px #eeeeee;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.company-info-wrapper {
+  margin-left: 40px;
+  flex-grow: 1;
+}
+
+.circle-add-button {
+    position: absolute;
+    bottom: 35px;
+    left: 35px;
+    width: 50px;
+    height: 50px;
+}
+
+

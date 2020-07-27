@@ -1,0 +1,82 @@
+<div class="centered-content">
+  <div class="white-box">
+    <h1 class="title has-text-primary">{{ 'SIGNUP.TITLE' | translate }}</h1>
+    <form
+      #signupForm="ngForm"
+      (ngSubmit)="onSubmit(usernameInput.value, emailInput.value, pwInput.value)"
+      style="margin-bottom: 10px;"
+    >
+      <div class="field">
+        <p class="control has-icons-left has-icons-right">
+          <input
+            #usernameInput
+            ngModel
+            name="username"
+            class="input has-background-light"
+            type="text"
+            required
+            [placeholder]="usernamePlaceholder"
+          />
+          <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
+        </p>
+      </div>
+      <div class="field">
+        <p class="control has-icons-left has-icons-right">
+          <input
+            #emailInput
+            ngModel
+            name="email"
+            class="input has-background-light"
+            type="email"
+            email
+            required
+            [ngClass]="{
+              'is-danger':
+                !signupForm.controls.email?.valid &&
+                !signupForm.controls.email?.untouched
+            }"
+            [placeholder]="emailPlaceholder"
+          />
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+        </p>
+      </div>
+      <div class="field">
+        <p class="control has-icons-left">
+          <input
+            #pwInput
+            ngModel
+            name="password"
+            class="input has-background-light"
+            type="password"
+            minlength="6"
+            required
+            [ngClass]="{
+              'is-danger':
+                !signupForm.controls.password?.valid &&
+                !signupForm.controls.password?.untouched
+            }"
+            [placeholder]="passwordPlaceholder"
+          />
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+      </div>
+      <div class="field" style="display: flex; justify-content: flex-end;">
+        <p class="control">
+          <button class="button is-primary has-text-white" type="submit">
+            {{ 'SIGNUP.SIGNUP' | translate }}
+          </button>
+        </p>
+      </div>
+    </form>
+
+    <p class="has-text-grey">
+      {{ 'SIGNUP.AGA' | translate }} <a routerLink="/login">{{ 'SIGNUP.LOGIN' | translate }}</a> {{ 'SIGNUP.NOW' | translate }}
+    </p>
+  </div>
+</div>

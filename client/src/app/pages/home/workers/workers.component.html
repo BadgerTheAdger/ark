@@ -1,0 +1,189 @@
+<div class="centered-content">
+  <div class="home-page-container">
+    <div class="main">
+      <app-header></app-header>
+      <hr />
+
+      <div class="companies-page-wrapper">
+        <div class="companies-panel-wrapper">
+          <h1 class="title has-text-primary">
+            {{ 'WORKERS.TITLE' | translate }}
+          </h1>
+
+          <div class="companies-container cool-text">
+            <h3 class="empty-state-text" *ngIf="!workers">
+              You have no workers! Click the add button to create a new worker.
+            </h3>
+            <div class="task" *ngFor="let worker of workers">
+              <div class="task-text">
+                <p>
+                  {{ worker.username }}
+                  <span
+                    *ngIf="worker.role === 'admin'"
+                    class="admin-text"
+                    style="margin-left: 15px;"
+                    >{{ 'WORKERS.ADMIN' | translate }}</span
+                  >
+                </p>
+              </div>
+              <div class="task-buttons">
+                <button
+                  class="button is-danger"
+                  *ngIf="loggedUser.role === 'supervisor' || (worker.role !== 'admin' && loggedUser.role === 'admin')"
+                  (click)="onDeleteWorker(worker._id)"
+                >
+                  <div class="icon">
+                    <i class="fas fa-trash"></i>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex;">
+            <a routerLink=".." style="margin-right: 10px;">
+              <i class="far fa-arrow-alt-circle-left fa-3x is-primary"></i>
+            </a>
+            <nav
+              *ngIf="pager.totalPages > 1"
+              class="pagination"
+              role="navigation"
+              aria-label="pagination"
+            >
+              <div style="margin-right: 10px;">
+                <a
+                  class="pagination-previous"
+                  [routerLink]="['/companies', companyId, 'workers']"
+                  [queryParams]="{
+                    page: pager.currentPage - 1,
+                    search: search,
+                    role: roleSelected
+                  }"
+                  >{{ 'WORKERS.PREVIOUS' | translate }}</a
+                >
+                <a
+                  class="pagination-next"
+                  [routerLink]="['/companies', companyId, 'workers']"
+                  [queryParams]="{
+                    page: pager.currentPage + 1,
+                    search: search,
+                    role: roleSelected
+                  }"
+                  >{{ 'WORKERS.NEXT' | translate }}</a
+                >
+              </div>
+
+              <ul class="pagination-list">
+                <li>
+                  <a
+                    class="pagination-link"
+                    [routerLink]="['/companies', companyId, 'workers']"
+                    [queryParams]="{ page: 1 }"
+                    *ngIf="pager.currentPage !== 1"
+                    aria-label="Goto page 1"
+                    >1</a
+                  >
+                </li>
+                <li>
+                  <span
+                    class="pagination-ellipsis"
+                    *ngIf="pager.currentPage > 3"
+                    >&hellip;</span
+                  >
+                </li>
+                <li>
+                  <a
+                    class="pagination-link"
+                    [routerLink]="['/companies', companyId, 'workers']"
+                    [queryParams]="{ page: pager.currentPage - 1 }"
+                    *ngIf="pager.currentPage > 2"
+                    aria-label="Goto page 45"
+                    >{{ pager.currentPage - 1 }}</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="pagination-link is-current"
+                    [routerLink]="['/companies', companyId, 'workers']"
+                    [queryParams]="{ page: pager.currentPage }"
+                    aria-label="Page 46"
+                    aria-current="page"
+                    >{{ pager.currentPage }}</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="pagination-link"
+                    [routerLink]="['/companies', companyId, 'workers']"
+                    [queryParams]="{ page: pager.currentPage + 1 }"
+                    *ngIf="pager.currentPage !== pager.totalPages"
+                    aria-label="Goto page 47"
+                    >{{ pager.currentPage + 1 }}</a
+                  >
+                </li>
+                <li>
+                  <span
+                    class="pagination-ellipsis"
+                    *ngIf="pager.currentPage < pager.totalPages - 2"
+                    >&hellip;</span
+                  >
+                </li>
+                <li>
+                  <a
+                    class="pagination-link"
+                    [routerLink]="['/companies', companyId, 'workers']"
+                    [queryParams]="{ page: pager.totalPages }"
+                    *ngIf="pager.currentPage < pager.totalPages - 1"
+                    aria-label="Goto page 86"
+                    >{{ pager.totalPages }}</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <p class="control has-icons-left">
+          <input
+            (keyup)="searchData($event)"
+            class="input"
+            type="text"
+            [placeholder]="searchPlaceholder"
+          />
+          <span class="icon is-left">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </span>
+        </p>
+
+        <div
+          (change)="searchData($event)"
+          class="select"
+          style="margin-left: 10px;"
+        >
+          <select>
+            <option>{{ 'WORKERS.ALL' | translate }}</option>
+            <option>{{ 'WORKERS.BASIC' | translate }}</option>
+            <option><span class="admin-text">{{ 'WORKERS.ADMINS' | translate }}</span></option>
+          </select>
+        </div>
+
+        <!-- <h3 class="empty-state-text" *ngIf="tasks.length === 0">
+                  There are no tasks here! Click the add button to create a new task.
+                </h3> -->
+
+        <!-- <div class="control-panel-wrapper">
+              <div class="control-panel cool-text">
+                Text or info
+              </div>
+            </div> -->
+
+        <button
+          class="circle-add-button button is-primary"
+          [routerLink]="['/companies', companyId, 'create-worker']"
+        >
+          <i class="fas fa-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

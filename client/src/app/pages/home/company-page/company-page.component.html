@@ -1,0 +1,54 @@
+<div class="centered-content">
+  <div class="home-page-container">
+    <div class="main">
+      <app-header></app-header>
+      <hr />
+
+      <div class="company-wrapper">
+        <div class="company-info-wrapper">
+          <div class="company-info">
+            <div class="cool-text">
+              {{ loadedCompany.companyName }}
+            </div>
+          </div>
+          <div>
+            <a
+              class="circle-add-button"
+              [routerLink]="['/companies']"
+              *ngIf="loggedUser.role === 'supervisor'"
+            >
+              <i class="far fa-arrow-alt-circle-left fa-3x is-primary"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="company-control-panel">
+          <div
+            class="control-panel-button"
+            [routerLink]="['/companies', loadedCompany._id, 'workers']"
+          >
+            <i
+              class="far fa-address-card fa-lg"
+              style="margin-top: 5px; margin-right: 15px;"
+            ></i>
+            <div class="cool-text">
+              {{ 'COMPANY.WORKERSLIST' | translate }}
+            </div>
+          </div>
+          <div
+            class="control-panel-button"
+            [routerLink]="['/companies', loadedCompany._id, 'work-page']"
+          >
+            <i
+              class="fas fa-dolly fa-lg"
+              style="margin-top: 5px; margin-right: 15px;"
+            ></i>
+            <div class="cool-text">
+              {{ 'COMPANY.TOWORK' | translate }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

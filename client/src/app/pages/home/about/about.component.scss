@@ -1,0 +1,75 @@
+@import '../../../../main-style.scss';
+
+.home-page-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    max-height: 680px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    height: 680px;
+    background: white;
+    border-radius: 5px;
+}
+
+.menu {
+    display: flex;
+    padding-top: 23px;
+    padding-left: 40px;
+    padding-right: 40px;
+    box-sizing: border-box;
+
+    .menu-left {
+        display: flex;
+        flex-grow: 1;
+        .menu-item {
+            margin-right: 20px;
+        }
+    }
+
+    .menu-right {
+        display: flex;
+    }
+
+    .menu-item {
+        display: flex;
+        font-family: 'Lato';
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .cool-link::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: $pomade;
+        transition: width .3s;
+    }
+
+    .cool-link:hover::after {
+        width: 100%;
+        transition: 0.3s;
+    }
+
+    .cool-link-active::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: $pomade; 
+    }
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    min-height: 69vh;
+}

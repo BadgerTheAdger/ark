@@ -1,0 +1,140 @@
+{
+    "HOME": {
+        "HOME": "Home",
+        "ABOUT": "About",
+        "PROFILE": "Profile",
+        "COMPANIES": "Companies",
+        "COMPANY": "Company",
+        "TOWORK": "To work"
+    },
+    "ABOUT": {
+        "TEXT": "SOFTWARE SYSTEM FOR AUTOMATING THE CONTROL OF ANIMAL NUTRITION IN INDUSTRY."
+    },
+    "COMPANIES": {
+        "TITLE": "Companies",
+        "DESCRIPTION": "You can create new company by pressing \"+\" button.",
+        "PREVIOUS": "Previous",
+        "NEXT": "Next page"
+    },
+    "COMPANY": {
+        "WORKERSLIST": "Workers list",
+        "TOWORK": "To work"
+    },
+    "TOWORK": {
+        "INFORMATION": "Information",
+        "HERDINFO": "Herd info",
+        "STATS": "Stats",
+        "FORMULATIONS": "Feed formulations",
+        "DMI": "Dry matter intake"
+    },
+    "HERDINFO": {
+        "TITLE": "Herd info",
+        "PREVIOUS": "Previous",
+        "NEXT":"Next page",
+        "SEARCH": "Search"
+    },
+    "DMI": {
+        "TITLE": "Dry matter intake",
+        "GET": "Get",
+        "CW": "Cow weight",
+        "MPD": "Milk per day (kg)",
+        "KG": "Kg"
+    },
+    "ANIMAL": {
+        "SPECIES": "Species",
+        "HERDNUMBER": "Herd number",
+        "AGE": "Age",
+        "WEIGHT": "Weight",
+        "WEIGHTSTATS": "Weight stats",
+        "EDIT": "Edit",
+        "SAVE": "Save",
+        "CANCEL": "Cancel"
+    },
+    "WEIGHTSTATS": {
+        "STATSTITLE": "Animal weight per month (in kg)",
+        "MONTHS": [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+        ],
+        "BACK": "Back"
+    },
+    "WORKERS": {
+        "TITLE": "Workers",
+        "PREVIOUS": "Previous",
+        "NEXT": "Next page",
+        "SEARCH": "Search",
+        "ALL": "All",
+        "BASIC": "Basic",
+        "ADMINS": "Admins",
+        "ADMIN": "Admin"
+    },
+    "CREATEWORKER": {
+        "TITLE": "Create a worker",
+        "USERNAME": "Username",
+        "EMAIL": "Email",
+        "PASSWORD": "Password",
+        "ROLE": "Role",
+        "BASIC": "Basic",
+        "ADMIN": "Admin",
+        "BACK": "Back",
+        "CREATE": "Create"
+    },
+    "CREATEANIMAL": {
+      "TITLE": "Create an animal",
+      "HERDNUMBER": "Herd number",
+      "SPECIES": "Species",
+      "AGE": "Age",
+      "WEIGHT": "Weight",
+      "BACK": "Back",
+      "CREATE": "Create"  
+    },
+    "PROFILE": {
+        "SECURITY": "Security",
+        "LANGUAGE": "Language",
+        "LOGOUT": "Logout"
+    },
+    "CREATECOMPANY": {
+        "TITLE": "Create a company",
+        "NAME": "Enter company name",
+        "CANCEL": "Cancel",
+        "CREATE": "Create"
+    },
+    "LANGUAGE": {
+        "PREFERENCES": "Preferences",
+        "SELECT": "Select",
+        "LANGUAGE": "Language",
+        "BACK": "Back to profile",
+        "USA": "U.S",
+        "UKRAINIAN": "Ukrainian",
+        "RUSSIAN": "Russian"
+    },
+    "LOGIN": {
+        "TITLE": "Login",
+        "EMAIL": "Email",
+        "PASSWORD": "Password",
+        "LOGIN": "Login",
+        "NHA": "Not got an account?",
+        "SIGNUP": "Sign up",
+        "NOW": "now!"
+    },
+    "SIGNUP": {
+        "TITLE": "Sign up",
+        "USERNAME": "Username",
+        "EMAIL": "Email",
+        "PASSWORD": "Password",
+        "SIGNUP": "Sign up",
+        "AGA": "Already got an account?",
+        "LOGIN": "Login",
+        "NOW": "now!"
+    }
+}

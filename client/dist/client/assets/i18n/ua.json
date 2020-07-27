@@ -1,0 +1,19 @@
+{
+    "HOME": {
+        "HOME": "Головна",
+        "ABOUT": "Про нас",
+        "PROFILE": "Профіль",
+        "COMPANIES": "Компанії",
+        "COMPANY": "Компанія",
+        "TOWORK": "До роботи"
+    },
+    "LANGUAGE": {
+        "PREFERENCES": "Оберіть мову",
+        "SELECT": "Обрати",
+        "LANGUAGE": "Мову",
+        "BACK": "Назад",
+        "USA": "США",
+        "UKRAINIAN": "Українська",
+        "RUSSIAN": "Російська"
+    }
+}

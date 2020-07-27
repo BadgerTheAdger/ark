@@ -1,0 +1,49 @@
+@import "../../../../../../main-style.scss";
+
+.animal-page-container {
+  display: flex;
+  margin-left: 40px;
+  border: 2px solid rgb(243, 242, 242);
+  border-radius: 5px;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+  height: 300px;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.info-element {
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.control-panel {
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.info-button {
+  cursor: pointer;
+  margin-bottom: 20px;
+  color: $pomade;
+  outline: none;
+}
+
+.control-panel-button {
+  display: flex;
+  border-radius: 5px;
+  box-shadow: 0 0 0 3px #eeeeee;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}

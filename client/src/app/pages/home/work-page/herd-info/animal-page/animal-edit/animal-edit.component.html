@@ -1,0 +1,94 @@
+<div class="animal-page-container cool-text">
+  <div class="info-container">
+    <!-- <div class="info-element">{{ 'ANIMAL.SPECIES' | translate }}: {{ animal.species }}</div>
+      <div class="info-element">{{ 'ANIMAL.HERDNUMBER' | translate }}: {{ animal.herdNumber }}</div>
+      <div class="info-element">{{ 'ANIMAL.AGE' | translate }}: {{ animal.age }}</div>
+      <div class="info-element">{{ 'ANIMAL.WEIGHT' | translate }}: {{ animal.weight }}</div> -->
+    <form
+      #editForm="ngForm"
+      class="edit-form"
+      (ngSubmit)="
+        onSubmit(
+          speciesInput.value,
+          numberInput.value,
+          ageInput.value,
+          weigthInput.value
+        )
+      "
+    >
+      <label for="species">{{ 'ANIMAL.SPECIES' | translate }}: </label>
+      <input
+        type="text"
+        #speciesInput
+        class="input edit-inputs"
+        [ngModel]="animal.species"
+        name="species"
+        id="species"
+        required
+      />
+      <label for="number">{{ 'ANIMAL.HERDNUMBER' | translate }}: </label>
+      <input
+        type="text"
+        #numberInput
+        class="input edit-inputs"
+        [ngModel]="animal.herdNumber"
+        name="number"
+        id="number"
+        required
+      />
+      <label for="species">{{ 'ANIMAL.AGE' | translate }}: </label>
+      <input
+        type="number"
+        #ageInput
+        class="input edit-inputs"
+        [ngModel]="animal.age"
+        name="age"
+        id="number"
+        required
+      />
+      <label for="species">{{ 'ANIMAL.WEIGHT' | translate }}: </label>
+      <input
+        type="number"
+        #weigthInput
+        class="input edit-inputs"
+        [ngModel]="animal.weight"
+        name="weight"
+        id="number"
+        required
+      />
+    </form>
+
+    <!-- <div>
+        <i class="fas fa-angle-left fa-lg info-button" [routerLink]="['..']"></i>
+      </div> -->
+  </div>
+
+  <div class="control-panel">
+    <button
+      type="submit"
+      class="control-panel-button"
+      [disabled]="editForm.invalid"
+      (click)="
+        onSubmit(
+          speciesInput.value,
+          numberInput.value,
+          ageInput.value,
+          weigthInput.value
+        )
+      "
+    >
+      <i
+        class="far fa-save fa-lg"
+        style="margin-top: 5px; margin-right: 7px;"
+      ></i>
+      <div class="cool-text">
+        {{ 'ANIMAL.SAVE' | translate }}
+      </div>
+    </button>
+    <div class="control-panel-button" [routerLink]="['..']">
+      <div class="cool-text">
+        {{ 'ANIMAL.CANCEL' | translate }}
+      </div>
+    </div>
+  </div>
+</div>

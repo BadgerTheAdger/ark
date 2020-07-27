@@ -1,0 +1,42 @@
+<div class="centered-content">
+  <div class="home-page-container">
+    <div class="main">
+      <app-header></app-header>
+      <hr />
+
+      <div class="work-page-container">
+        <div class="aside-menu">
+          <div class="aside-menu-title">
+            {{ 'TOWORK.INFORMATION' | translate }}
+          </div>
+          <div class="aside-menu-item cool-text" routerLink="herd-info" routerLinkActive="active-menu-item">
+            {{ 'TOWORK.HERDINFO' | translate }}
+          </div>
+          <div class="aside-menu-item cool-text">
+            {{ 'TOWORK.STATS' | translate }}
+          </div>
+          <div class="aside-menu-title">
+            {{ 'TOWORK.FORMULATIONS' | translate }}
+          </div>
+          <div class="aside-menu-item cool-text" routerLink="dry-matter" routerLinkActive="active-menu-item">
+            {{ 'TOWORK.DMI' | translate }}
+          </div>
+        </div>
+
+        <div>
+            <a
+              class="circle-add-button"
+              [routerLink]="['..']"
+              *ngIf="loggedUser.role != 'basic'"
+            >
+              <i class="far fa-arrow-alt-circle-left fa-3x is-primary"></i>
+            </a>
+          </div>
+
+        <div class="work-area">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

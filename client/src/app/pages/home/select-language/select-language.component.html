@@ -1,0 +1,68 @@
+<div class="centered-content">
+  <div class="white-box-language">
+    <h1 class="title has-text-primary">{{ 'LANGUAGE.PREFERENCES' | translate }}</h1>
+    <div class="select-language cool-text">
+      <div class="text-wrapper">{{ 'LANGUAGE.SELECT' | translate}}:</div>
+      <div class="dropdown-wrapper">
+        <div class="dropdown is-hoverable is-right">
+          <div class="dropdown-trigger">
+            <button
+              class="button"
+              aria-haspopup="true"
+              aria-controls="dropdown-menu"
+            >
+              <span class="icon is-small">
+                <i class="fas fa-globe"></i>
+              </span>
+              <span class="cool-text">{{ 'LANGUAGE.LANGUAGE' | translate }}</span>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+            <div class="dropdown-content is-right">
+              <a class="dropdown-item" (click)="selectLanguage('en')">
+                <img
+                  style="margin-right: 30px;"
+                  src="../../../../assets/us-icon.png"
+                  alt=""
+                />
+                {{ 'LANGUAGE.USA' | translate }}
+                <i class="fas fa-check" *ngIf="selectedLanguage === 'en'"></i>
+              </a>
+              <a class="dropdown-item" (click)="selectLanguage('ua')">
+                <img
+                  style="margin-right: 30px;"
+                  src="../../../../assets/ua-icon.png"
+                  alt=""
+                />
+                {{ 'LANGUAGE.UKRAINIAN' | translate }}
+                <i class="fas fa-check" *ngIf="selectedLanguage === 'ua'"></i>
+              </a>
+              <a class="dropdown-item" (click)="selectLanguage('ru')">
+                <img
+                  style="margin-right: 30px;"
+                  src="../../../../assets/ru-icon.png"
+                  alt=""
+                />
+                {{ 'LANGUAGE.RUSSIAN' | translate }}
+                <i class="fas fa-check" *ngIf="selectedLanguage === 'ru'"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom" style="margin-top: 90px; display: flex;">
+      <a routerLink="/profile/me" style="margin-right: 20px;">
+        <span>
+            <i class="far fa-arrow-alt-circle-left fa-2x"></i>
+        </span>
+      </a>
+      <div style="padding-top: 4px;">
+        <p class="has-text-grey cool-text">
+          {{ 'LANGUAGE.BACK' | translate }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

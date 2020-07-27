@@ -1,0 +1,37 @@
+<div class="animal-page-container cool-text">
+  <div class="info-container">
+    <div class="info-element">
+      {{ "ANIMAL.SPECIES" | translate }}: {{ animal.species }}
+    </div>
+    <div class="info-element">
+      {{ "ANIMAL.HERDNUMBER" | translate }}: {{ animal.herdNumber }}
+    </div>
+    <div class="info-element">
+      {{ "ANIMAL.AGE" | translate }}: {{ animal.age }}
+    </div>
+    <div class="info-element">
+      {{ "ANIMAL.WEIGHT" | translate }}: {{ animal.weight }}
+    </div>
+    <div>
+      <i class="fas fa-angle-left fa-lg info-button" [routerLink]="['..']"></i>
+    </div>
+  </div>
+
+  <div class="control-panel">
+    <div class="control-panel-button" [routerLink]="['edit']">
+      <i class="far fa-edit" style="margin-top: 3px; margin-right: 7px;"></i>
+      <div class="cool-text">
+        {{ 'ANIMAL.EDIT' | translate }}
+      </div>
+    </div>
+    <div class="control-panel-button" [routerLink]="['weight-stats']">
+      <i
+        class="fas fa-weight-hanging"
+        style="margin-top: 5px; margin-right: 7px;"
+      ></i>
+      <div class="cool-text">
+        {{ "ANIMAL.WEIGHTSTATS" | translate }}
+      </div>
+    </div>
+  </div>
+</div>

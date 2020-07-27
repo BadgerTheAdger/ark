@@ -1,0 +1,72 @@
+<div style="margin-left: 40px;">
+  <div class="title has-text-primary">
+    {{ 'DMI.TITLE' | translate }}
+  </div>
+  <div style="max-width: 450px; display: flex;">
+    <form
+      #signupForm="ngForm"
+      (ngSubmit)="onSubmit(cowWeightInput.value, milkInput.value)"
+      style="margin-bottom: 10px;"
+    >
+      <div class="field">
+        <p class="control">
+          <input
+            #cowWeightInput
+            ngModel
+            name="cowWeight"
+            class="input has-background-light"
+            type="text"
+            required
+            [ngClass]="{
+              'is-danger':
+                !signupForm.controls.cowWeight?.valid &&
+                !signupForm.controls.cowWeight?.untouched
+            }"
+            [placeholder]="cowWeightPlaceholder"
+          />
+        </p>
+      </div>
+      <div class="field">
+        <p class="control">
+          <input
+            #milkInput
+            ngModel
+            name="milk"
+            class="input has-background-light"
+            required
+            [ngClass]="{
+              'is-danger':
+                !signupForm.controls.milk?.valid &&
+                !signupForm.controls.milk?.untouched
+            }"
+            [placeholder]="milkPerDayPlaceholder"
+          />
+        </p>
+      </div>
+
+      <div style="display: flex; margin-top: 20px;">
+        <div
+          class="bottom"
+          style="display: flex; flex-grow: 1; padding-top: 4px;"
+        >
+          <div style="padding-top: 4px;">
+            <p class="has-text-grey cool-text"></p>
+          </div>
+        </div>
+        <div class="field" style="display: flex; justify-content: flex-end;">
+          <p class="control">
+            <button class="button is-primary has-text-white" type="submit">
+              {{ 'DMI.GET' | translate }}
+            </button>
+          </p>
+        </div>
+      </div>
+    </form>
+    <div style="margin-left: 40px; margin-top: 34px;"  *ngIf="result != null">
+        <i class="fas fa-equals fa-lg"></i>
+    </div>
+    <div style="margin-left: 40px; margin-top: 30px;" class="cool-text"  *ngIf="result != null">
+        {{ result }} {{ 'DMI.KG' | translate }}
+    </div>
+  </div>
+</div>

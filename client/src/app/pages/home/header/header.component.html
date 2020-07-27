@@ -1,0 +1,51 @@
+<div class="menu">
+  <div class="menu-left">
+    <div class="menu-item">
+      <a
+        class="cool-link"
+        routerLink="/home"
+        routerLinkActive="cool-link-active"
+        >{{ 'HOME.HOME' | translate }}</a
+      >
+    </div>
+    <div class="menu-item">
+      <a class="cool-link" [routerLink]="['/about']">{{ 'HOME.ABOUT' | translate }}</a>
+    </div>
+    <div class="menu-item" *ngIf="isLoggedIn">
+      <a
+        class="cool-link"
+        routerLink="/profile/me"
+        routerLinkActive="cool-link-active"
+        >{{ 'HOME.PROFILE' | translate }}</a
+      >
+    </div>
+    <div class="menu-item" *ngIf="isLoggedIn && loggedUser.role === 'supervisor'">
+        <a
+          class="cool-link"
+          routerLink="/companies"
+          routerLinkActive="cool-link-active"
+          >{{ 'HOME.COMPANIES' | translate}}</a
+        >
+      </div>
+      <div class="menu-item" *ngIf="isLoggedIn && loggedUser.role === 'admin'">
+        <a
+          class="cool-link"
+          [routerLink]="['/companies', loggedUser._hostCompanyId]"
+          routerLinkActive="cool-link-active"
+          >{{ 'HOME.COMPANY' | translate }}</a>
+      </div>
+      <div class="menu-item" *ngIf="isLoggedIn && loggedUser.role === 'basic'">
+        <a
+          class="cool-link"
+          [routerLink]="['/companies', loggedUser._hostCompanyId, 'work-page']"
+          routerLinkActive="cool-link-active"
+          >{{ 'HOME.TOWORK' | translate }}</a
+        >
+      </div>
+  </div>
+  <div class="menu-right">
+    <div class="menu-item" *ngIf="!isLoggedIn">
+      <a class="cool-link" routerLink="/signup">Sign Up</a>
+    </div>
+  </div>
+</div>

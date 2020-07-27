@@ -1,0 +1,111 @@
+<div class="centered-content">
+  <div class="white-box-language">
+    <h1 class="title has-text-primary">{{ 'CREATEANIMAL.TITLE' | translate }}</h1>
+
+    <form
+      #signupForm="ngForm"
+      (ngSubmit)="
+        onSubmit(
+          herdNumberInput.value,
+          speciesInput.value,
+          ageInput.value,
+          weightInput.value
+        )
+      "
+      style="margin-bottom: 10px;"
+    >
+      <div class="field">
+        <p class="control">
+          <input
+            #herdNumberInput
+            ngModel
+            name="herdNumber"
+            class="input has-background-light"
+            type="text"
+            required
+            [placeholder]="numberPlaceholder"
+          />
+        </p>
+      </div>
+      <div class="field">
+        <p class="control">
+          <input
+            #speciesInput
+            ngModel
+            name="species"
+            class="input has-background-light"
+            required
+            [ngClass]="{
+              'is-danger':
+                !signupForm.controls.species?.valid &&
+                !signupForm.controls.species?.untouched
+            }"
+            [placeholder]="speciesPlaceholder"
+          />
+        </p>
+      </div>
+      <div style="display: flex;">
+        <div class="field" style="margin-right: 10px;">
+          <p class="control">
+            <input
+              #ageInput
+              ngModel
+              name="age"
+              class="input has-background-light"
+              required
+              [ngClass]="{
+                'is-danger':
+                  !signupForm.controls.age?.valid &&
+                  !signupForm.controls.age?.untouched
+              }"
+              [placeholder]="agePlaceholder"
+            />
+          </p>
+        </div>
+        <div class="field">
+          <p class="control">
+            <input
+              #weightInput
+              ngModel
+              name="weight"
+              class="input has-background-light"
+              required
+              [ngClass]="{
+                'is-danger':
+                  !signupForm.controls.weight?.valid &&
+                  !signupForm.controls.weight?.untouched
+              }"
+              [placeholder]="weightPlaceholder"
+            />
+          </p>
+        </div>
+      </div>
+
+      
+      <div style="display: flex; margin-top: 20px;">
+        <div
+          class="bottom"
+          style="display: flex; flex-grow: 1; padding-top: 4px;"
+        >
+          <a [routerLink]="['..', 'herd-info']" style="margin-right: 20px;">
+            <span>
+              <i class="far fa-arrow-alt-circle-left fa-2x"></i>
+            </span>
+          </a>
+          <div style="padding-top: 4px;">
+            <p class="has-text-grey cool-text">
+              {{ 'CREATEANIMAL.BACK' | translate }}
+            </p>
+          </div>
+        </div>
+        <div class="field" style="display: flex; justify-content: flex-end;">
+          <p class="control">
+            <button class="button is-primary has-text-white" type="submit">
+              {{ 'CREATEANIMAL.CREATE' | translate }}
+            </button>
+          </p>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

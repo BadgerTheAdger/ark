@@ -1,0 +1,152 @@
+<div class="companies-page-wrapper">
+  <div class="companies-panel-wrapper">
+    <h1 class="title has-text-primary">
+      {{ 'HERDINFO.TITLE' | translate }}
+    </h1>
+
+    <div class="companies-container cool-text">
+      <h3 class="empty-state-text" *ngIf="!animals">
+        You have no animals! Click the add button to create a new animal.
+      </h3>
+      <div class="task" *ngFor="let animal of animals" [routerLink]="[animal._id]">
+        <div class="task-text">
+          <p>
+            {{ animal.herdNumber }}
+          </p>
+        </div>
+        <div class="task-buttons">
+          <button class="button is-danger" (click)="onDeleteAnimal(animal._id)">
+            <div class="icon">
+              <i class="fas fa-trash"></i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex;">
+      <nav
+        *ngIf="pager.totalPages > 1"
+        class="pagination"
+        role="navigation"
+        aria-label="pagination"
+      >
+        <div style="margin-right: 10px;">
+          <a
+            class="pagination-previous"
+            [routerLink]="['/companies', companyId, 'work-page', 'herd-info']"
+            [queryParams]="{
+              page: pager.currentPage - 1
+            }"
+            >{{ 'HERDINFO.PREVIOUS' | translate }}</a
+          >
+          <a
+            class="pagination-next"
+            [routerLink]="['/companies', companyId, 'work-page', 'herd-info']"
+            [queryParams]="{
+              page: pager.currentPage + 1
+            }"
+            >{{ 'HERDINFO.NEXT' | translate }}</a
+          >
+        </div>
+
+        <ul class="pagination-list">
+          <li>
+            <a
+              class="pagination-link"
+              [routerLink]="['/companies', companyId, 'work-page', 'herd-info']"
+              [queryParams]="{ page: 1 }"
+              *ngIf="pager.currentPage !== 1"
+              aria-label="Goto page 1"
+              >1</a
+            >
+          </li>
+          <li>
+            <span class="pagination-ellipsis" *ngIf="pager.currentPage > 3"
+              >&hellip;</span
+            >
+          </li>
+          <li>
+            <a
+              class="pagination-link"
+              [routerLink]="['/companies', companyId, 'work-page', 'herd-info']"
+              [queryParams]="{ page: pager.currentPage - 1 }"
+              *ngIf="pager.currentPage > 2"
+              aria-label="Goto page 45"
+              >{{ pager.currentPage - 1 }}</a
+            >
+          </li>
+          <li>
+            <a
+              class="pagination-link is-current"
+              [routerLink]="['/companies', companyId, 'work-page', 'herd-info']"
+              [queryParams]="{ page: pager.currentPage }"
+              aria-label="Page 46"
+              aria-current="page"
+              >{{ pager.currentPage }}</a
+            >
+          </li>
+          <li>
+            <a
+              class="pagination-link"
+              [routerLink]="['/companies', companyId, 'work-page', 'herd-info']"
+              [queryParams]="{ page: pager.currentPage + 1 }"
+              *ngIf="pager.currentPage !== pager.totalPages"
+              aria-label="Goto page 47"
+              >{{ pager.currentPage + 1 }}</a
+            >
+          </li>
+          <li>
+            <span
+              class="pagination-ellipsis"
+              *ngIf="pager.currentPage < pager.totalPages - 2"
+              >&hellip;</span
+            >
+          </li>
+          <li>
+            <a
+              class="pagination-link"
+              [routerLink]="['/companies', companyId, 'work-page', 'herd-info']"
+              [queryParams]="{ page: pager.totalPages }"
+              *ngIf="pager.currentPage < pager.totalPages - 1"
+              aria-label="Goto page 86"
+              >{{ pager.totalPages }}</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column;">
+    <p class="control has-icons-left">
+      <input class="input" type="text" [placeholder]="searchPlaceholder" (keyup)="searchData($event)"/>
+      <span class="icon is-left">
+        <i class="fas fa-search" aria-hidden="true"></i>
+      </span>
+    </p>
+    <!-- <div style="align-self: flex-end; margin-top: 10px;">
+      <div class="select" style="margin-left: 10px;">
+        <select>
+          <option>All</option>
+          <option>Basic</option>
+          <option><span class="admin-text">Admins</span></option>
+        </select>
+      </div>
+    </div> -->
+  </div>
+
+  <!-- <h3 class="empty-state-text" *ngIf="tasks.length === 0">
+              There are no tasks here! Click the add button to create a new task.
+            </h3> -->
+
+  <!-- <div class="control-panel-wrapper">
+          <div class="control-panel cool-text">
+            Text or info
+          </div>
+        </div> -->
+
+  <button class="circle-add-button button is-primary" [routerLink]="['..', 'create-animal']">
+    <i class="fas fa-plus"></i>
+  </button>
+</div>
